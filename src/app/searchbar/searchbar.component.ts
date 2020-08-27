@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-searchbar',
@@ -10,7 +10,21 @@ export class SearchbarComponent implements OnInit {
   OMDB : string
   value = ""
 
-  constructor() { }
+  observer = {
+	  next: function(value) {
+          console.log(value);
+    },
+    error: function(error) {
+        console.log(error);
+    },
+    complete: function() {
+        console.log('Completed');
+    }
+  };
+
+  constructor(
+    private http: HttpClient
+  ) { }
 
   ngOnInit(): void {
   }
@@ -18,5 +32,6 @@ export class SearchbarComponent implements OnInit {
   print(){
     console.log(this.value);
     this.value = "";
+    this.http.get('http://www.omdbapi.com/?i=tt3896198&apikey=7e02c70f').subscribe(this.observer);
   }
 }
