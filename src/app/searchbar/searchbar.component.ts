@@ -22,7 +22,7 @@ export class SearchbarComponent implements OnInit {
   }
 
   print(){
-    const query = `http://www.omdbapi.com/?s=${ this.value }&apikey=7e02c70f`;
+    const query = `https://www.omdbapi.com/?s=${ this.value }&apikey=7e02c70f`;
     this.http.get(query).subscribe(obj =>{
       this.movieService.searchedMovie(obj)
     });
