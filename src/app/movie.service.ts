@@ -5,24 +5,30 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class MovieService {
-  movies = [];
+  nominatedMoviesArray = []
+  private nominatedMoviesObs = new BehaviorSubject<any>([]);
   private movie = new BehaviorSubject<any>({});
   cast = this.movie.asObservable();
+  castNominatedMovies = this.nominatedMoviesObs.asObservable();
 
   searchedMovie(movie){
     this.movie.next(movie);
   }
 
-  addMovie(movie){
-    this.movies.push(movie);
+  addNominatedMovie(movie){
+    this.nominatedMoviesArray.push(movie);
+    console.log("add nominated movie to service: " + JSON.stringify(movie));
+    console.log("nominated list len: " + this.nominatedMoviesArray.length);
+    this.nominatedMoviesObs.next(this.nominatedMoviesArray);
   }
 
-  removeMovie(id){
-    this.movies.slice(id, 1);
+  removeNominatedMovie(id){
+    this.nominatedMoviesArray.slice(id, 1);
+    this.nominatedMoviesObs.next(this.nominatedMoviesArray);
   }
 
-  getMovies(){
-    return this.movies;
+  getNominatedMovies(){
+    return this.nominatedMoviesArray;
   }
   constructor() { }
 }

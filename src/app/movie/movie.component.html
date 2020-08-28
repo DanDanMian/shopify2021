@@ -1,2 +1,10 @@
-<p>movie works</p>
-<p>{{ movie }}</p>
+<mat-card>
+  <ng-container *ngFor="let movie of searchResults">
+    <mat-card-header>
+      <mat-card-title>{{ movie.Title }} ({{ movie.Year }})</mat-card-title>
+      <button mat-raised-button color="primary" (click)="nominate(movie)">
+        Nominate
+      </button>
+    </mat-card-header>
+  </ng-container>
+</mat-card>

@@ -22,11 +22,10 @@ export class SearchbarComponent implements OnInit {
   }
 
   print(){
-    console.log(this.value);
-    this.value = "";
-    this.http.get('http://www.omdbapi.com/?i=tt3896198&apikey=7e02c70f').subscribe(obj =>{
+    const query = `http://www.omdbapi.com/?s=${ this.value }&apikey=7e02c70f`;
+    this.http.get(query).subscribe(obj =>{
       this.movieService.searchedMovie(obj)
     });
-    console.log(this.movies);
+    this.value = "";
   }
 }

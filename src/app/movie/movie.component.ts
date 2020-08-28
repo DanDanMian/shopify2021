@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 
 import { MovieService } from '../movie.service';
 
@@ -9,18 +8,22 @@ import { MovieService } from '../movie.service';
   styleUrls: ['./movie.component.css']
 })
 export class MovieComponent implements OnInit {
-  movie: any
+  searchResults: any
 
   constructor(
     private movieService: MovieService
   ) { }
 
   ngOnInit(): void {
-    this.movieService.cast.subscribe(movie =>{
-      this.movie = movie;
+    this.movieService.cast.subscribe(searchResults =>{
+      this.searchResults = searchResults.Search;
       console.log("observer called")
-      console.log(movie)
+      console.log(this.searchResults)
     })
   }
 
+  nominate(movie: any) {
+    console.log("nominate fun called: " + JSON.stringify(movie));
+    this.movieService.addNominatedMovie(movie);
+  }
 }

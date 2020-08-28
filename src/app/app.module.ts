@@ -12,12 +12,14 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MovieComponent } from './movie/movie.component';
+import { NominatedComponent } from './nominated/nominated.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchbarComponent,
-    MovieComponent
+    MovieComponent,
+    NominatedComponent
   ],
   imports: [
     BrowserModule,
