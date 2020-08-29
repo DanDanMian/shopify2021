@@ -10,9 +10,12 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
 import { FormsModule } from '@angular/forms';
 import { MovieComponent } from './movie/movie.component';
 import { NominatedComponent } from './nominated/nominated.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { NominatedComponent } from './nominated/nominated.component';
     MatCardModule,
     MatInputModule,
     MatIconModule,
-    FormsModule
+    MatDividerModule,
+    MatListModule,
+    FormsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
