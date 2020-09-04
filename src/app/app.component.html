@@ -1,13 +1,13 @@
-<div class="content" role="main">
+<body>
   <div fxLayout="column">
-    <div fxFlex="50%" fxLayoutAlign="start">Search Movie</div>
-    <app-searchbar style="display: flex;" ></app-searchbar>
-    <div fxLayout="row" fxLayoutAlign="space-between strech" fxLayoutGap="10%">
-      <app-movie fxFlex="60%"></app-movie>
-      <app-nominated fxFlex="30%"></app-nominated>
+    <div fxLayout="row" fxLayoutAlign="center" fxFlexOffset="5">
+      <app-searchbar fxFlex="90"></app-searchbar>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center" fxFlexOffset="5">
+      <div fxFlex="50"><app-movie></app-movie></div>
+      <div fxFlex="5"></div>
+      <div fxFlex="35"><app-nominated></app-nominated></div>
     </div>
   </div>
-</div>
-
-
-<router-outlet></router-outlet>
+</body>

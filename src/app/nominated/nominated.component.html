@@ -1,6 +1,9 @@
 <mat-card>
+  <h1>Nominated</h1>
   <ng-container *ngFor="let movie of nominatedArr">
     <mat-card-title>{{ movie.Title }} ({{ movie.Year }})</mat-card-title>
-    <button mat-raised-button color="primary">Delete</button>
+    <mat-card-actions>
+      <button mat-raised-button color="primary">Delete</button>
+    </mat-card-actions>
   </ng-container>
 </mat-card>
