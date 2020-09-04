@@ -13,6 +13,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MovieComponent } from './movie/movie.component';
 import { NominatedComponent } from './nominated/nominated.component';
+import { FlexLayoutModule } from '@angular/flex-layout'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NominatedComponent } from './nominated/nominated.component';
     MatCardModule,
     MatInputModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
