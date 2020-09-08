@@ -1,14 +1,13 @@
 <mat-card>
-  <h1>Search Results</h1>
-  <mat-divider></mat-divider>
+  <h1>Results for "{{ searchTitle }}"</h1>
   <mat-list>
     <ng-container *ngFor="let movie of searchResults">
-      <mat-divider></mat-divider>
       <mat-list-item>
-        <h2>{{ movie.Title }} ({{ movie.Year }})</h2>
-      <button mat-raised-button color="primary" (click)="nominate(movie)">
-        Nominate
-      </button>
+        <mat-icon matListIcon>movie</mat-icon>
+        <h2 matLine>{{ movie.Title }} ({{ movie.Year }})</h2>
+        <button mat-raised-button color="primary" (click)="nominate(movie)">
+          Nominate
+        </button>
       </mat-list-item>
     </ng-container>
   </mat-list>

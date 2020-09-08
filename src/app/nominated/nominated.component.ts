@@ -21,4 +21,8 @@ export class NominatedComponent implements OnInit {
     })
   }
 
+  delete(movie: any) {
+    console.log("delete func called: " + JSON.stringify(movie));
+    this.movieService.removeNominatedMovie(movie);
+  }
 }

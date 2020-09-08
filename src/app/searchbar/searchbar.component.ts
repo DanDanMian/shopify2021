@@ -21,11 +21,11 @@ export class SearchbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  print(){
+  search(){
     const query = `https://www.omdbapi.com/?s=${ this.value }&apikey=7e02c70f`;
     this.http.get(query).subscribe(obj =>{
-      this.movieService.searchedMovie(obj)
+      this.movieService.searchedMovie({'title': this.value, 'movies': obj })
     });
-    this.value = "";
+    // this.value = "";
   }
 }

@@ -9,16 +9,18 @@ import { MovieService } from '../movie.service';
 })
 export class MovieComponent implements OnInit {
   searchResults: any
+  searchTitle: string
 
   constructor(
     private movieService: MovieService
   ) { }
 
   ngOnInit(): void {
-    this.movieService.cast.subscribe(searchResults =>{
-      this.searchResults = searchResults.Search;
+    this.movieService.castMovies.subscribe(searchResults =>{
+      this.searchTitle = searchResults.title;
+      this.searchResults = searchResults.movies.Search;
       console.log("observer called")
-      console.log(this.searchResults)
+      console.log(searchResults)
     })
   }
 

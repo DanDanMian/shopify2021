@@ -1,9 +1,14 @@
 <mat-card>
-  <h1>Nominated</h1>
-  <ng-container *ngFor="let movie of nominatedArr">
-    <mat-card-title>{{ movie.Title }} ({{ movie.Year }})</mat-card-title>
-    <mat-card-actions>
-      <button mat-raised-button color="primary">Delete</button>
-    </mat-card-actions>
-  </ng-container>
+  <h1>Nomination</h1>
+  <mat-list>
+    <ng-container *ngFor="let movie of nominatedArr;">
+      <mat-list-item>
+        <mat-icon matListIcon>movie</mat-icon>
+        <h2 matLine>{{ movie.Title }} ({{ movie.Year }})</h2>
+        <button mat-raised-button color="primary" (click)="delete(movie)">
+          Delete
+        </button>
+      </mat-list-item>
+    </ng-container>
+  </mat-list>
 </mat-card>
